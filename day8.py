@@ -1,3 +1,4 @@
+# Day 8: Algorithm Evaluation Metrics
 # Cross Validation Classification LogLoss
 from pandas import read_csv
 from sklearn.model_selection import KFold
@@ -13,4 +14,5 @@ kfold = KFold(n_splits=10, random_state=7)
 model = LogisticRegression(solver='liblinear')
 scoring = 'neg_log_loss'
 results = cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
-print('Logloss: %.3f (%.3f)' % (results.mean(), results.std())​)
+#print("Logloss: %.3f (%.3f)" % (results.mean(), results.std())​)​
+print("Logloss: {:.3f} {:.3f}".format(results.mean(), results.std()))
